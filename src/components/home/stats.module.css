@@ -1,0 +1,178 @@
+.statsSection {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.heading {
+  margin-bottom: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: clamp(34px, 4vw, 60px);
+  line-height: 1;
+  text-align: center;
+  color: #133349;
+}
+
+.subtext {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  color: rgba(19, 51, 73, 0.75);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* wrapper stays same */
+.card {
+  width: 100%;
+  background: transparent;
+}
+
+/* ✅ premium card */
+.cardInner {
+  max-width: 280px;
+  min-height: 180px;
+
+  background: linear-gradient(180deg, #ffffff 0%, #fff8f1 100%);
+  border: 1px solid rgba(176, 124, 64, 0.35);
+  border-radius: 18px;
+
+  padding: 22px 20px;
+  text-align: left;
+
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 0 12px 24px rgba(13, 43, 63, 0.08);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+/* left accent line */
+.cardInner::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 16px;
+  bottom: 16px;
+  width: 5px;
+  background: #b07c40;
+  border-radius: 999px;
+  opacity: 0.95;
+}
+
+/* subtle top highlight */
+.cardInner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px 180px at 30% 0%,
+    rgba(176, 124, 64, 0.12),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* hover feels premium */
+.cardInner:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px rgba(13, 43, 63, 0.14);
+  border-color: rgba(176, 124, 64, 0.6);
+}
+
+/* Number block */
+.numberWrap {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  padding-left: 14px; /* space for accent line */
+}
+
+/* ✅ cleaner number style */
+.digit {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 1;
+  color: #b07c40;
+  letter-spacing: -0.5px;
+  animation: popIn 500ms ease both;
+}
+
+/* ✅ remove strong shine; keep very soft */
+.spark {
+  position: absolute;
+  inset: -30% -60%;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    rgba(176, 124, 64, 0.10) 40%,
+    rgba(176, 124, 64, 0.18) 50%,
+    rgba(176, 124, 64, 0.10) 60%,
+    transparent 100%
+  );
+  transform: translateX(-70%);
+  animation: sweep 3.2s ease-in-out infinite;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Label */
+.label {
+  margin-top: 12px;
+  padding-left: 14px; /* aligns with number */
+  font-size: 15px;
+  line-height: 22px;
+  color: rgba(17, 24, 39, 0.85);
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes popIn {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes sweep {
+  0% {
+    transform: translateX(-75%);
+    opacity: 0.2;
+  }
+  45% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateX(75%);
+    opacity: 0.2;
+  }
+}
+
+/* Responsive */
+@media (max-width: 575px) {
+  .statsSection {
+    padding: 60px 0;
+  }
+
+  .cardInner {
+    max-width: 100%;
+    min-height: 160px;
+    padding: 18px 16px;
+  }
+
+  .digit {
+    font-size: 38px;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+}

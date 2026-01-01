@@ -1,0 +1,36 @@
+.navGlass {
+  background: rgba(0, 0, 0, 0.35) !important;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+
+.navLinks {
+  gap: 20px;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: Poppins;
+font-weight: 600;
+font-style: SemiBold;
+font-size: 16px;
+leading-trim: NONE;
+line-height: 18px;
+letter-spacing: 0%;
+vertical-align: middle;
+
+
+}
+
+.navLink:hover {
+  color: #ffffff !important;
+}
+
+.contactBtn {
+  border-radius: 10px;
+  font-size: 16px;
+}

@@ -1,0 +1,109 @@
+.section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 60px 0;
+  }
+}
+
+.title {
+  font-size: clamp(30px, 3.6vw, 60px);
+  font-weight: 600;
+  color: #0d2b3f;
+  margin-bottom: 12px;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 550ms ease;
+}
+
+.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #5b6b77;
+  margin: 0;
+}
+
+/* Card */
+.card {
+  height: 100%;
+  border: 1.5px solid rgba(13, 43, 63, 0.55);
+  border-radius: 10px;
+  background: #fff;
+  padding: 18px 18px 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+
+  opacity: 0;
+  transform: translateY(16px);
+  transition: transform 520ms ease, opacity 520ms ease, box-shadow 220ms ease;
+}
+
+.cardIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.cardText {
+  font-size: 14px;
+  color: #5b6b77;
+  line-height: 20px;
+  margin-bottom: 22px;
+  text-align: left;
+
+  min-height: 92px; /* keeps equal height like screenshot */
+}
+
+/* User row */
+.userRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(17, 24, 39, 0.18);
+  flex: 0 0 auto;
+}
+
+.avatarImg {
+  object-fit: cover;
+  border-radius: 999px;
+}
+
+.userName {
+  font-weight: 600;
+  font-size: 14px;
+  color: #111827;
+}
+
+.userCity {
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  color: rgba(17, 24, 39, 0.7);
+  margin-top: 2px;
+}
