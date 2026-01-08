@@ -1,0 +1,122 @@
+.section {
+  padding: 0px 80px 0;
+  background: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 60px 0;
+  }
+}
+
+.title {
+  text-align: center;
+  font-weight: 600;
+  color: #0d2b3f;
+  font-size: clamp(34px, 4vw, 60px);
+  margin-bottom: 30px;
+}
+
+/* List width like screenshot */
+.list {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  gap: 16px;
+}
+
+/* Box */
+.item {
+  background: #fff;
+  border-radius: 10px;
+  
+  overflow: hidden;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  border: 0.2px solid #9F6A26;
+  box-shadow: 0px 4px 8px 0px #9F6A261A;
+
+box-shadow: 0px 8px 48px 0px #9F6A261A;
+
+box-shadow: 0px 0px 1px 0px #9F6A261A;
+
+
+
+}
+
+.item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+  border-color: rgba(176, 124, 64, 0.55);
+}
+
+/* Question row */
+.questionRow {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  text-align: left;
+  padding: 22px 26px;
+  cursor: pointer;
+
+}
+
+.question {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.25;
+}
+
+/* Plus/Minus */
+.icon {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 300;
+  color: #111827;
+  border-radius: 8px;
+}
+
+/* Animated answer */
+.answerWrap {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 320ms ease;
+}
+
+.open .answerWrap {
+  max-height: 220px; /* enough for 2-3 lines */
+}
+
+.answer {
+  padding: 0 26px 22px;
+  color: #5b6b77;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+  .questionRow {
+    padding: 18px 16px;
+  }
+  .question {
+    font-size: 15px;
+  }
+  .icon {
+    width: 38px;
+    height: 38px;
+    font-size: 26px;
+  }
+  .answer {
+    padding: 0 16px 18px;
+  }
+}

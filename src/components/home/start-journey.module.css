@@ -1,0 +1,85 @@
+.section {
+  padding: 40px 0 80px;
+  background: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 60px 0;
+  }
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 42px 40px;
+  border: 1px solid rgba(176, 124, 64, 0.18);
+  box-shadow: 0px 0px 10px 0px #9F6A2640;
+  overflow: hidden; /* IMPORTANT: prevents image overflow */
+}
+
+.title {
+  font-size: clamp(34px, 4vw, 60px);
+  font-weight: 600;
+  line-height: 1.05;
+  margin: 0 0 14px;
+  color: #0b0f14;
+}
+
+.highlight {
+  color: #a8743a;
+  font-weight: 600;
+}
+
+.desc {
+  font-size: 14px;
+  line-height: 22px;
+  color: #2f3b45;
+  text-align: left;
+  margin-bottom: 22px;
+}
+
+.btnCta {
+  background: #0d2b3f;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.btnCta:hover {
+  background: #0b2334;
+  color: #ffffff;
+}
+
+/* ✅ Responsive image wrapper (never overflow) */
+.imageWrap {
+  position: relative;
+  width: min(533px, 100%);
+  height: 400px;
+  margin-left: auto;  /* keeps image to the right on desktop */
+}
+
+.image {
+  object-fit: contain;
+  object-position: right bottom; /* like screenshot */
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .imageWrap {
+    height: 320px;
+    margin: 0 auto; /* center on smaller screens */
+  }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+  .card {
+    padding: 28px 18px;
+  }
+  .imageWrap {
+    height: 240px;
+  }
+}

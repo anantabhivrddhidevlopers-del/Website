@@ -1,0 +1,80 @@
+.section {
+  padding:  40px 0px  80px;
+  background: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 60px 0;
+  }
+}
+
+.title {
+ 
+ font-size: clamp(34px, 4vw, 60px);
+  font-weight: 600;
+  line-height: 1.05;
+  color: #0d2b3f;
+  margin-bottom: 14px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 550ms ease;
+}
+
+.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text {
+  font-size: 14px;
+  line-height: 24px;
+  color: #3f4d5a;
+  margin-bottom: 14px;
+  text-align: justify;
+}
+
+/* Card style exactly like screenshot */
+.card {
+  background: #ffffff;
+  border-radius:  12px 12px 0px 0px;
+  padding: 18px 18px 16px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.10);
+  position: relative;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(14px);
+  transition: transform 500ms ease, opacity 500ms ease, box-shadow 220ms ease;
+ 
+  border-bottom: 6px solid #9F6A26;
+  box-shadow: 4px 4px 4px 0px #9F6A2640;
+
+}
+
+.cardIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0d2b3f;
+  margin-bottom: 8px;
+  line-height: 22px;
+}
+
+.cardText {
+  font-size: 14px;
+  color: #5b6b77;
+  line-height: 18px;
+  margin: 0;
+}
+
+
