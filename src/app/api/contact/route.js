@@ -1,9 +1,25 @@
 import nodemailer from "nodemailer";
 
+// Force Node runtime (nodemailer requires TCP sockets which Edge runtime doesn't support)
+export const runtime = 'nodejs';
+
 export async function POST(req) {
     try {
         const body = await req.json();
         const { fullName, email, phone, subject, message } = body;
+
+        // Validate required environment variables early
+        if (!process.env.SMTP_USER || !process.env.SMTP_PASS || !process.env.CONTACT_TO_EMAIL) {
+            console.error('Missing SMTP env vars:', {
+                SMTP_USER: !!process.env.SMTP_USER,
+                SMTP_PASS: !!process.env.SMTP_PASS,
+                CONTACT_TO_EMAIL: !!process.env.CONTACT_TO_EMAIL,
+            });
+            return new Response(JSON.stringify({ ok: false, error: 'Server misconfiguration: missing SMTP credentials' }), {
+                status: 500,
+                headers: { "Content-Type": "application/json" },
+            });
+        }
 
         // Basic server-side validation
         if (!fullName || !email || !phone || !subject || !message) {
