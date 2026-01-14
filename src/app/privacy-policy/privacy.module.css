@@ -1,0 +1,167 @@
+/* =========================
+   PRIVACY PAGE (FULL CSS)
+   - Sticky left menu (desktop)
+   - Smooth anchor sections already in JSX
+   - Active + Hover style as you asked
+   NOTE: No font-size / font-weight changed
+========================= */
+
+.section {
+  background: #ffffff;
+}
+
+/* ✅ FORCE sticky to work even if parent wrappers have overflow/transform */
+.section,
+.section :global(.container),
+.section :global(.row),
+.section :global([class*="col-"]) {
+  overflow: visible !important;
+  transform: none !important;
+}
+
+/* ✅ LEFT column fix (you use leftColFix in JSX) */
+.leftColFix {
+  position: relative;
+  overflow: visible !important;
+  align-self: flex-start;
+}
+
+/* ✅ Sticky wrapper: sticks on desktop */
+.stickyWrap {
+  position: sticky;
+  top: 92px; /* adjust if your header is taller */
+  z-index: 5;
+  align-self: flex-start;
+}
+
+@media (max-width: 991.98px) {
+  .stickyWrap {
+    position: static;
+    top: auto;
+  }
+}
+
+/* Optional container card (if you want, keep; if not used you can remove) */
+.sideCard {
+  background: transparent;
+}
+
+/* Left nav */
+.sideNav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Nav link (NO font changes) */
+.sideLink {
+  display: block;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+  padding: 10px 12px;
+  border-radius: 12px;
+  transition: 160ms ease;
+  border: 1px solid transparent;
+}
+
+/* ✅ Hover: bg + color + light border */
+.sideLink:hover {
+  background: rgba(19, 51, 73, 0.06);
+  color: #133349;
+  border: 1px solid rgba(19, 51, 73, 0.14);
+}
+
+/* ✅ Active: EXACT requirement */
+.active {
+color:#9F6A26;
+}
+
+/* =========================
+   RIGHT CONTENT
+========================= */
+.contentCard {
+  border-radius: 20px;
+  border: 1px solid rgba(19, 51, 73, 0.10);
+  background: #fff;
+  padding: 22px;
+  box-shadow: 0 18px 50px rgba(10, 35, 90, 0.06);
+}
+
+/* Blocks */
+.block {
+  scroll-margin-top: 98px; /* so headings don't hide under navbar */
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(19, 51, 73, 0.08);
+}
+
+.block:last-child {
+  border-bottom: none;
+}
+
+/* Typography (UNCHANGED) */
+.h2 {
+  font-size: 34px;
+  font-weight: 600;
+  color: #0b0f14;
+  margin: 0 0 10px;
+  letter-spacing: -0.4px;
+}
+
+.h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #0b0f14;
+  margin: 0 0 10px;
+  letter-spacing: -0.2px;
+}
+
+.p {
+  margin: 0 0 10px;
+  color: #3f4d5a;
+  text-align: justify;
+  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.ul {
+  margin: 0 0 10px;
+  padding-left: 18px;
+  color: #3f4d5a;
+  text-align: justify;
+  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.link {
+  color: #133349;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+  
+}
+
+/* Mobile (UNCHANGED from you) */
+@media (max-width: 575.98px) {
+  .contentCard {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .h2 {
+    font-size: 24px;
+  }
+
+  .h3 {
+    font-size: 18px;
+  }
+}
+
+
+

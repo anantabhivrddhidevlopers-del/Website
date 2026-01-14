@@ -1,0 +1,160 @@
+.statsSection {
+  padding: 80px 0 40px;
+  background: #ffffff;
+}
+
+.head {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.heading {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: clamp(34px, 4vw, 60px);
+  line-height: 1.02;
+  color: #133349;
+  letter-spacing: -0.6px;
+}
+
+.subtext {
+  margin: 12px auto 0;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+  color: rgba(19, 51, 73, 0.75);
+}
+
+.headIn .heading {
+  animation: fadeUp 600ms ease both;
+}
+.headIn .subtext {
+  animation: fadeUp 650ms ease both;
+  animation-delay: 120ms;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CARD */
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgba(19, 51, 73, 0.10);
+  box-shadow: 0 16px 40px rgba(19, 51, 73, 0.08);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.cardTop {
+  height: 4px;
+  background: linear-gradient(90deg, #b07c40, rgba(176, 124, 64, 0.15));
+}
+
+.cardBody {
+  padding: 18px 18px 16px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 52px rgba(19, 51, 73, 0.12);
+  border-color: rgba(176, 124, 64, 0.25);
+}
+
+.cardIn {
+  animation: cardReveal 600ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+}
+
+@keyframes cardReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Number */
+.number {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  padding-bottom: 10px;
+}
+
+.digit {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 1;
+  color: #133349;
+  letter-spacing: -0.8px;
+}
+
+/* subtle running shimmer line (professional, not flashy) */
+.runningLine {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 72px;
+  border-radius: 999px;
+  background: rgba(176, 124, 64, 0.22);
+  overflow: hidden;
+}
+
+.runningLine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-80%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(176, 124, 64, 0.75),
+    transparent
+  );
+  animation: run 2.2s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+@keyframes run {
+  0% { transform: translateX(-80%); }
+  50% { transform: translateX(80%); }
+  100% { transform: translateX(80%); }
+}
+
+/* Label */
+.label {
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 22px;
+  color: rgba(19, 51, 73, 0.82);
+  font-weight: 600;
+  max-width: 220px;
+}
+
+/* Responsive */
+@media (max-width: 575px) {
+  .statsSection {
+    padding: 64px 0;
+  }
+  .digit {
+    font-size: 40px;
+  }
+  .label {
+    font-size: 14px;
+  }
+}
