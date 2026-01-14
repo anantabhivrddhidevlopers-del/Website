@@ -1,0 +1,132 @@
+.aboutSection {
+  padding: 40px 0 80px;
+  background: #ffffff;
+  overflow: hidden; /* helps clip reveals + parallax */
+}
+
+/* LEFT */
+.title {
+  font-size: 60px;
+  font-weight: 600;
+  color: #0d2b3f;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+/* Split helpers */
+.splitWrap {
+  display: inline-block;
+}
+
+.word {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #3f4d5a;
+  margin-bottom: 14px;
+  text-align: justify;
+  will-change: transform, opacity, clip-path;
+}
+
+/* RIGHT IMAGE LAYOUT */
+.imageWrap {
+  position: relative;
+  width: 100%;
+  height: 520px;
+}
+
+/* Top image should OVERLAP bottom */
+.imageTop {
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 310px;
+  height: 360px;
+  border-radius: 16px;
+  overflow: hidden;
+  z-index: 3;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+/* Bottom image bigger + behind top */
+.imageBottom {
+  position: absolute;
+  right: 0;
+  top: 90px;
+  width: min(420px, 100%);
+  height: 420px;
+
+  /* FIX: your border-radius was invalid */
+  border-radius: 22px 22px 0px 0px;
+
+  overflow: hidden;
+  background: #eee;
+  z-index: 1;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+/* Actual images */
+.image {
+  object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .title {
+    font-size: 42px;
+  }
+
+  .imageWrap {
+    height: 480px;
+  }
+
+  .imageTop {
+    left: 0;
+    width: 240px;
+    height: 310px;
+  }
+
+  .imageBottom {
+    top: 90px;
+    width: 100%;
+    height: 360px;
+  }
+}
+
+/* Mobile: stack images (no overlap) */
+@media (max-width: 575px) {
+  .aboutSection {
+    padding: 60px 0;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .imageWrap {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .imageTop,
+  .imageBottom {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    height: 240px;
+    border-radius: 16px;
+  }
+}
