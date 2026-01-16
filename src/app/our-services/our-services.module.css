@@ -1,0 +1,216 @@
+/* ========================================================= */
+/* ✅ NEW EQUIPMENT SECTION STYLES (proper layout)            */
+/* ========================================================= */
+
+.eqRow {
+  margin: 70px;
+  row-gap: 28px;
+}
+
+/* LEFT WRAPPER */
+.eqLeft {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  max-width: 520px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* BIG IMAGE (back) */
+.eqBig {
+  position: absolute;
+  left: 90px;
+  top: 90px;
+  width: 456px;
+  height: 445px;
+  overflow: hidden;
+ 
+
+  z-index: 1;
+  
+}
+
+/* SMALL IMAGE (front) */
+.eqSmall {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 280px;
+  height: 350px;
+
+  overflow: hidden;
+  
+
+  z-index: 2;
+
+}
+
+/* Next Image */
+.eqImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* RIGHT SIDE WRAPPER (gives spacing like screenshot) */
+.eqRight {
+  padding-left: 16px;
+}
+
+/* Heading */
+.eqHeading {
+  font-size: clamp(30px, 3.6vw, 60px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: 0.2px;
+  color: #0d2b3f;
+  margin: 0 0 18px;
+  text-transform: uppercase;
+}
+
+/* Bullets */
+.eqBullets {
+  margin: 0;
+  padding-left: 22px;
+  color: #2d3b47;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.eqBullets li {
+  margin-bottom: 14px;
+}
+
+.eqBullets b {
+  color: #0d2b3f;
+}
+
+/* ✅ Tablet */
+@media (max-width: 991px) {
+  .eqLeft {
+    height: 440px;
+    max-width: 520px;
+  }
+
+  .eqBig {
+    left: 70px;
+    top: 90px;
+    width: 380px;
+    height: 300px;
+  }
+
+  .eqSmall {
+    width: 240px;
+    height: 250px;
+  }
+
+  .eqRight {
+    padding-left: 0;
+  }
+}
+
+/* ✅ Mobile */
+@media (max-width: 575px) {
+  .eqLeft {
+    height: 360px;
+    max-width: 100%;
+  }
+
+  .eqBig {
+    left: 42px;
+    top: 110px;
+    width: 300px;
+    height: 230px;
+    border-radius: 18px;
+  }
+
+  .eqSmall {
+    width: 190px;
+    height: 200px;
+    border-radius: 18px;
+  }
+
+  .eqHeading {
+    font-size: 28px;
+  }
+
+  .eqBullets {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+}
+
+
+
+
+/* ========================================================= */
+/* ✅ NEW GALLERY SECTION STYLES                            */
+/* ========================================================= */
+.gallerySection {
+    margin: 70px 0;
+    text-align: center;
+}
+
+.galleryTitle {
+    font-size: clamp(30px, 4vw, 60px);
+    font-weight: 600;
+    color: #0d2b3f;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.galleryWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+.galleryItem {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.galleryItem:hover {
+    transform: scale(1.05);
+}
+
+.galleryImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ✅ Tablet */
+@media (max-width: 991px) {
+    .galleryItem {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* ✅ Mobile */
+@media (max-width: 575px) {
+    .galleryItem {
+        width: 200px;
+        height: 200px;
+    }
+}

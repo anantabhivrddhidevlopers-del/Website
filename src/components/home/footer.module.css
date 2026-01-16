@@ -1,0 +1,257 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  padding: 50px 0 20px;
+}
+
+/* Background image */
+.bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/home-page/footer-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.02);
+  will-change: transform, opacity;
+}
+
+/* ✅ optional: slight dark overlay so text always readable */
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Left */
+.brandRow {
+  margin-bottom: 12px;
+  will-change: transform, opacity;
+}
+
+.desc {
+  max-width: 420px;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  letter-spacing: 0%;
+  line-height: 24px;
+  will-change: transform, opacity;
+}
+
+/* Social icons row */
+.socialRow {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+
+.socialBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform 180ms ease, opacity 180ms ease;
+  text-decoration: none;
+  will-change: transform, opacity;
+}
+
+
+.socialBtn:hover {
+  transform: translateY(3px);
+  opacity: 0.95;
+
+}
+
+/* Columns */
+.colTitle {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  will-change: transform, opacity;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.links a {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 180ms ease, transform 180ms ease, opacity 180ms ease;
+}
+
+.links a:hover {
+  color: #ffd7a6;              /* premium gold hover */
+  transform: translateX(4px);  /* smooth movement */
+  opacity: 1;
+}
+
+
+
+/* Contact */
+.contactList {
+  display: grid;
+  gap: 10px;
+}
+
+.contactItem {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 16px;
+  line-height: 20px;
+  opacity: 0.92;
+  will-change: transform, opacity;
+}
+
+.icon {
+  width: 25px;
+  display: inline-flex;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.contactItem a {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  transition: color 180ms ease, transform 180ms ease, opacity 180ms ease;
+}
+
+.contactItem a:hover {
+  color: #ffd7a6;
+  transform: translateX(2px);
+  opacity: 1;
+}
+
+.address {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Divider line */
+.divider {
+  margin: 26px 0 16px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transform: translateY(10px);
+  will-change: transform, opacity;
+}
+
+/* Bottom row */
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 16px;
+  opacity: 0.92;
+  transform: translateY(10px);
+  will-change: transform, opacity;
+}
+
+.bottomLinks {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bottomLinks a {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  transition: color 180ms ease, transform 180ms ease, opacity 180ms ease;
+}
+
+.bottomLinks a:hover {
+  color: #ffd7a6;
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+
+.dot {
+  opacity: 0.65;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .footer {
+    padding: 44px 0 18px;
+  }
+  .desc {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .socialRow {
+    margin-top: 10px;
+  }
+
+  .bottomRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .links a,
+  .contactItem {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 575px) {
+  .desc {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .socialBtn {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+
+
+
+
+/* Highlighted Name */
+.highlightedName {
+  color: #ffd7a6; /* Gold color to match the theme */
+  font-weight: normal;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.highlightedName:hover {
+  color: #ffb84d;  /* Slightly darker gold color for hover effect */
+  transform: translateY(-2px); /* Subtle hover effect */
+}
+
+.highlightedName:focus {
+  outline: 2px solid #ffd7a6;  /* Focus outline to keep it accessible */
+}

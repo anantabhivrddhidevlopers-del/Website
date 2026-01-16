@@ -1,0 +1,59 @@
+.section,
+.section .container,
+.section .row,
+.section [class*="col-"] {
+  overflow: visible !important;  /* Ensure overflow is visible for sticky */
+  transform: none !important;    /* Prevent any transform that affects sticky */
+}
+/* Left column fix */
+.leftColFix {
+  position: relative;  /* Ensure relative positioning for sticky elements */
+  overflow: visible !important;  /* Ensure no overflow issues */
+}
+
+/* Sticky wrapper: sticks on desktop */
+.stickyWrap {
+  position: -webkit-sticky;  /* For Safari support */
+  position: sticky;
+  top: 92px;  /* Adjust based on your header's height */
+  z-index: 5;  /* Ensure it is above other content */
+  align-self: flex-start;
+}
+
+/* Mobile view */
+@media (max-width: 991.98px) {
+  .stickyWrap {
+    position: static;  /* Make it static on smaller screens */
+    top: auto;
+  }
+}
+
+/* Left nav (no changes needed, but added for clarity) */
+.sideNav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sideLink {
+  display: block;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+  padding: 10px 12px;
+  border-radius: 12px;
+  transition: 160ms ease;
+  border: 1px solid transparent;
+}
+
+/* Hover and active link styles */
+.sideLink:hover {
+  background: rgba(19, 51, 73, 0.06);
+  color: #133349;
+  border: 1px solid rgba(19, 51, 73, 0.14);
+}
+
+.active {
+  color: #9F6A26;
+}
