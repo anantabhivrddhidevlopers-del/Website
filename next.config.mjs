@@ -1,12 +1,10 @@
 // next.config.mjs
 export default {
-  experimental: {
-    turbopack: false,  // Disable Turbopack for compatibility with `next export`
-  },
+  // NOTE: Removed `experimental.turbopack` (unrecognized by newer Next.js)
+  // NOTE: Removed `output: 'export'` so that API routes (e.g. /api/contact) will work on Vercel.
+
   trailingSlash: true, // Optional: Add trailing slashes to URLs
   images: {
-    unoptimized: true,  // Disable image optimization for static export
+    unoptimized: true,
   },
-  // Ensure that all pages are static
-  output: 'export',
 };
