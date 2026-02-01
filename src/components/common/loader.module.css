@@ -1,0 +1,86 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: grid;
+  place-items: center;
+
+  background: black;
+  backdrop-filter: blur(4px);
+}
+
+.loaderWrap {
+  display: grid;
+  place-items: center;
+  gap: 14px;
+}
+
+.imageWrap {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+
+  /* this keeps the animated ring INSIDE the image area */
+  overflow: hidden;
+}
+
+.loaderImg {
+  object-fit: contain;
+
+  /* make next/image behave like normal <img> sizing */
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+
+  /* keep image on top of animation */
+  z-index: 2;
+}
+
+.innerRing {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  /* spinner color */
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(255, 255, 255, 0.95) 50deg,
+    transparent 120deg,
+    transparent 360deg
+  );
+
+  /* make it a ring (cut center out) */
+  -webkit-mask: radial-gradient(
+    closest-side,
+    transparent calc(50% - 5px),
+    #000 calc(50% - 5px),
+    #000 calc(50% + 5px),
+    transparent calc(50% + 6px)
+  );
+  mask: radial-gradient(
+    closest-side,
+    transparent calc(50% - 5px),
+    #000 calc(50% - 5px),
+    #000 calc(50% + 5px),
+    transparent calc(50% + 6px)
+  );
+
+  opacity: 0.9;
+  animation: spin 1s linear infinite;
+}
+
+.text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

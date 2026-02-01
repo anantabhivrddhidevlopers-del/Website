@@ -1,0 +1,138 @@
+.aboutSection {
+  padding: 40px 0 80px;
+  background: #ffffff;
+  overflow: hidden; /* helps clip reveals + parallax */
+}
+
+/* LEFT */
+.title {
+  font-size: 60px;
+  font-weight: 600;
+  color: #0d2b3f;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+/* Split helpers */
+.splitWrap {
+  display: inline-block;
+}
+
+.word {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #3f4d5a;
+  margin-bottom: 14px;
+  text-align: justify;
+  will-change: transform, opacity, clip-path;
+}
+
+/* RIGHT IMAGE LAYOUT */
+.imageWrap {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  max-width: 520px;
+  margin-left: auto;
+}
+
+/* Bottom image bigger + base layer */
+.imageBottom {
+  position: absolute;
+  right: 0;
+  top: 90px;
+  width: min(430px, 100%);
+  height: 435px;
+ 
+  z-index: 1;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+/* ✅ TOP IMAGE (overlapping) */
+.imageTop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 280px;
+  height: 351px;
+
+  border-radius: 22px;
+  overflow: hidden;
+
+  z-index: 2;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+/* Actual images (important for Next/Image) */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .title {
+    font-size: 42px;
+  }
+
+  .imageWrap {
+    height: 480px;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .imageTop {
+    left: 10px;
+    top: -10px;
+    width: 240px;
+    height: 310px;
+  }
+
+  .imageBottom {
+    top: 90px;
+    width: 100%;
+    height: 360px;
+  }
+}
+
+/* Mobile: stack images (no overlap) */
+@media (max-width: 575px) {
+  .aboutSection {
+    padding: 60px 0;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .imageWrap {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 100%;
+  }
+
+  .imageTop,
+  .imageBottom {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    height: 240px;
+    
+  }
+}

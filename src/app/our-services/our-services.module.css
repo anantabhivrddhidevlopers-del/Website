@@ -1,0 +1,367 @@
+/* ========================================================= */
+/* ✅ NEW EQUIPMENT SECTION STYLES (proper layout)            */
+/* ========================================================= */
+
+.eqRow {
+  margin: 70px;
+  row-gap: 28px;
+}
+
+/* LEFT WRAPPER */
+.eqLeft {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  max-width: 520px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* BIG IMAGE (back) */
+.eqBig {
+  position: absolute;
+  left: 90px;
+  top: 90px;
+  width: 456px;
+  height: 445px;
+  overflow: hidden;
+ 
+
+  z-index: 1;
+  
+}
+
+/* SMALL IMAGE (front) */
+.eqSmall {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 280px;
+  height: 350px;
+
+  overflow: hidden;
+  
+
+  z-index: 2;
+
+}
+
+/* Next Image */
+.eqImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* RIGHT SIDE WRAPPER (gives spacing like screenshot) */
+.eqRight {
+  padding-left: 16px;
+}
+
+/* Heading */
+.eqHeading {
+  font-size: clamp(30px, 3.6vw, 60px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: 0.2px;
+  color: #0d2b3f;
+  margin: 0 0 18px;
+  text-transform: uppercase;
+}
+
+/* Bullets */
+.eqBullets {
+  margin: 0;
+  padding-left: 22px;
+  color: #2d3b47;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.eqBullets li {
+  margin-bottom: 14px;
+}
+
+.eqBullets b {
+  color: #0d2b3f;
+}
+
+/* ✅ Tablet */
+@media (max-width: 991px) {
+  .eqLeft {
+    height: 440px;
+    max-width: 520px;
+  }
+
+  .eqBig {
+    left: 70px;
+    top: 90px;
+    width: 380px;
+    height: 300px;
+  }
+
+  .eqSmall {
+    width: 240px;
+    height: 250px;
+  }
+
+  .eqRight {
+    padding-left: 0;
+  }
+}
+
+/* ✅ Mobile */
+@media (max-width: 575px) {
+  .eqLeft {
+    height: 360px;
+    max-width: 100%;
+  }
+
+  .eqBig {
+    left: 42px;
+    top: 110px;
+    width: 300px;
+    height: 230px;
+    border-radius: 18px;
+  }
+
+  .eqSmall {
+    width: 190px;
+    height: 200px;
+    border-radius: 18px;
+  }
+
+  .eqHeading {
+    font-size: 28px;
+  }
+
+  .eqBullets {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+}
+
+
+
+
+/* ========================================================= */
+/* ✅ NEW GALLERY SECTION STYLES                            */
+/* ========================================================= */
+.gallerySection {
+    margin: 70px 0;
+    text-align: center;
+}
+
+.galleryTitle {
+    font-size: clamp(30px, 4vw, 60px);
+    font-weight: 600;
+    color: #0d2b3f;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.galleryWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+.galleryItem {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.galleryItem:hover {
+    transform: scale(1.05);
+}
+
+.galleryImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ✅ Tablet */
+@media (max-width: 991px) {
+    .galleryItem {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* ✅ Mobile */
+@media (max-width: 575px) {
+    .galleryItem {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================================= */
+/* ✅ VIDEO GALLERY (Collage + Hover Preview + Fullscreen)   */
+/* ========================================================= */
+.videoGallerySection {
+
+  padding: 80 0 40px;
+}
+
+.vHead {
+  text-align: center;
+  margin: 26px 0 26px;
+}
+
+.vTitle {
+  font-size: clamp(30px, 4vw, 60px);
+  font-weight: 650;
+  color: #0d2b3f;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.vSubtitle {
+  margin: 0;
+  font-size: 15px;
+  color: #2d3b47;
+  opacity: 0.85;
+}
+
+/* Marquee */
+.vMarquee {
+  overflow: hidden;
+  border-top: 1px solid rgba(13, 43, 63, 0.12);
+  border-bottom: 1px solid rgba(13, 43, 63, 0.12);
+  background: rgba(13, 43, 63, 0.03);
+}
+
+.vMarqueeTrack {
+  display: flex;
+  gap: 18px;
+  padding: 10px 0;
+  white-space: nowrap;
+  will-change: transform;
+  animation: vMarqueeMove 14s linear infinite;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: rgba(13, 43, 63, 0.85);
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+@keyframes vMarqueeMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+
+
+
+
+
+
+
+/* ✅ Collage Masonry (NO blank spaces) */
+.vCollage{
+  column-count: 3;
+  column-gap: 18px;
+}
+
+/* each tile becomes a “masonry block” */
+.vItem{
+  display: inline-block;       /* IMPORTANT for columns */
+  width: 100%;
+  margin: 0 0 18px;
+  break-inside: avoid;         /* prevents split */
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0b0b0b;         /* no white */
+  box-shadow: 0px 10px 22px rgba(0, 0, 0, 0.10);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ❌ REMOVE grid spans (these won't work in columns) */
+.vItemSm,
+.vItemWide,
+.vItemTall,
+.vItemLg{
+  grid-column: unset !important;
+}
+
+/* ✅ keep only HEIGHT variations to create collage feel */
+.vItemSm .vMedia { height: 220px; }
+.vItemWide .vMedia { height: 260px; }
+.vItemTall .vMedia { height: 320px; }
+.vItemLg .vMedia { height: 420px; }
+
+/* ✅ media container must NOT be height:100% (causes issues) */
+.vMedia{
+  position: relative;
+  width: 100%;
+  background: #0b0b0b;
+}
+
+/* keep video full */
+.vVideo{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ✅ Responsive masonry */
+@media (max-width: 991px){
+  .vCollage{ column-count: 2; }
+  .vItemLg .vMedia { height: 360px; }
+}
+
+@media (max-width: 575px){
+  .vCollage{ column-count: 1; }
+  .vItemSm .vMedia,
+  .vItemWide .vMedia,
+  .vItemTall .vMedia,
+  .vItemLg .vMedia { height: 240px; }
+}
