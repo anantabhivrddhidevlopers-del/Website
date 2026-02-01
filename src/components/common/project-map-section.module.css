@@ -1,0 +1,214 @@
+/* ========================================================= */
+/* ✅ MAP SECTION                                             */
+/* ========================================================= */
+.mapSection {
+  padding: 70px 0;
+}
+
+/* ========================================================= */
+/* ✅ MARQUEE (SEAMLESS LOOP)                                 */
+/* ========================================================= */
+.mapMarquee {
+  overflow: hidden;
+  border-top: 1px solid rgba(13, 43, 63, 0.12);
+  border-bottom: 1px solid rgba(13, 43, 63, 0.12);
+  background: rgba(13, 43, 63, 0.03);
+}
+
+.mapMarqueeInner {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: mapMarqueeMove 14s linear infinite;
+}
+
+.mapMarqueeTrack {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 0;
+  white-space: nowrap;
+  font-weight: 700;
+  letter-spacing: 1px;
+ color: #133349;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.cityItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.cityItem::after {
+  content: "•";
+  opacity: 0.6;
+  margin-left: 18px;
+}
+
+.cityItem:last-child::after {
+  content: "";
+  margin: 0;
+}
+
+/* move half width because we duplicated the track */
+@keyframes mapMarqueeMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ========================================================= */
+/* ✅ GRID LAYOUT                                              */
+/* ========================================================= */
+.mapGrid {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+/* ========================================================= */
+/* ✅ CARD                                                     */
+/* ========================================================= */
+.mapInfoCard {
+  background: #fff;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0px 14px 28px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(13, 43, 63, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.mapBadge {
+  width: fit-content;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 650;
+  background: rgba(13, 43, 63, 0.08);
+  color: #0d2b3f;
+  margin-bottom: 12px;
+}
+
+.mapCardTitle {
+  margin: 0 0 10px;
+  font-weight: 700;
+  color: #0d2b3f;
+  line-height: 1.05;
+  font-size: clamp(28px, 3.2vw, 56px);
+  word-break: break-word;
+}
+
+.mapCardText {
+  margin: 0 0 16px;
+  color: #2d3b47;
+  opacity: 0.9;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* buttons */
+.mapActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.mapBtnPrimary,
+.mapBtnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 650;
+  font-size: 14px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.mapBtnPrimary {
+  background: #0d2b3f;
+  color: #fff;
+}
+
+.mapBtnGhost {
+  background: rgba(13, 43, 63, 0.08);
+  color: #0d2b3f;
+}
+
+.mapBtnPrimary:hover,
+.mapBtnGhost:hover {
+  transform: translateY(-1px);
+}
+
+/* ========================================================= */
+/* ✅ MAP                                                      */
+/* ========================================================= */
+.mapFrame {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 14px 28px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(13, 43, 63, 0.1);
+  min-height: 460px;
+}
+
+.mapIframe {
+  width: 100%;
+  height: 100%;
+  min-height: 460px;
+  border: 0;
+  display: block;
+}
+
+/* ========================================================= */
+/* ✅ RESPONSIVE                                               */
+/* ========================================================= */
+@media (max-width: 991px) {
+  .mapGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .mapFrame,
+  .mapIframe {
+    min-height: 380px;
+  }
+
+  .mapInfoCard {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .mapSection {
+    padding: 50px 0;
+  }
+
+  .mapMarqueeTrack {
+    font-size: 14px;
+    gap: 14px;
+  }
+
+  .cityItem::after {
+    margin-left: 14px;
+  }
+
+  .mapFrame,
+  .mapIframe {
+    min-height: 320px;
+  }
+
+  .mapBtnPrimary,
+  .mapBtnGhost {
+    width: 100%;
+  }
+}
